@@ -85,6 +85,14 @@ Você pode ler mais sobre atributos para testes [nesse link](https://www.eduardo
 
 ---
 
+### Entrega
+
+  - Projeto em grupos.
+
+  - Serão dez dias de projeto.
+  
+  - O projeto tem até a seguinte data: `28/09/2020 - 14:00h`. Para ser entregue a avaliação final.
+
 ## Desenvolvimento e testes
 
 Este repositório já contem um _template_ com um App React criado, configurado e com os testes da avaliação automatizada.
