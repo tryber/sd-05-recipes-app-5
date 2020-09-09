@@ -1,5 +1,10 @@
 const drinkUrl = 'https://www.thecocktaildb.com/api/json/v1/1/';
 
+export default function tokenAPI() {
+  const fetchAPI = fetch(drinkUrl).then((resolve) => resolve.json());
+  return fetchAPI;
+}
+
 export const getDrinksByName = (name) => {
   const URL = `${drinkUrl}search.php?s=${name}`;
   return fetch(URL).then((response) =>
@@ -41,3 +46,4 @@ export const getRandomDrinks = () => {
     response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json)))
   );
 };
+

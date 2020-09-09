@@ -9,7 +9,7 @@ class Footer extends React.Component {
       <footer data-testid="footer">
         <input data-testid="drinks-bottom-btn" type="image" src={drinkIcon} alt="drink" />
         <input data-testid="explore-bottom-btn" type="image" src={exploreIcon} alt="explore" />
-        <input data-testid="food-bottom-btn" type="image" src={mealIcon} alt="food"/>
+        <input data-testid="food-bottom-btn" type="image" src={mealIcon} alt="food" />
       </footer>
     );
   }

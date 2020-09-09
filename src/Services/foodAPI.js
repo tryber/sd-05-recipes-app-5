@@ -1,5 +1,10 @@
 const foodUrl = 'https://www.themealdb.com/api/json/v1/1/';
 
+export default function tokenAPI() {
+  const fetchAPI = fetch(foodUrl).then((resolve) => resolve.json());
+  return fetchAPI;
+}
+
 export const getFoodByName = (name) => {
   const URL = `${foodUrl}search.php?s=${name}`;
   return fetch(URL).then((response) =>
@@ -46,3 +51,4 @@ export const getRandomFood = () => {
     response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json)))
   );
 };
+
