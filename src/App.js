@@ -11,7 +11,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Login} />
           <Route path="/footer" component={Footer} />
-          {/* <Route path="/comidas" component={Comidas} />
+          <Route path="/comidas" component={Comidas} />
           <Route path="/bebidas" component={Bebidas} />
           <Route path="/comidas/{id-da-receita}" component={IdReceitaComida} />
           <Route parth="/bebidas/{id-da-receita}" component={IdReceitaBebida} />
@@ -25,7 +25,7 @@ function App() {
           <Route path="/explorar/comidas/area" component={ExplorarComidasArea} />
           <Route path="/perfil" component={Perfil} />
           <Route path="/receitas-feitas" component={ReceitasFeitas} />
-          <Route path="/receitas-favoritas" component={Favoritas} /> */}
+          <Route path="/receitas-favoritas" component={ReceitasFavoritas} />
         </Switch>
       </BrowserRouter>
       <div id="meals">
