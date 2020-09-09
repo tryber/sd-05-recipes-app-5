@@ -1,13 +1,15 @@
 import React from 'react';
-import drinkIcon from '../images/drinkIcon.svg'
+import drinkIcon from '../images/drinkIcon.svg';
+import exploreIcon from '../images/exploreIcon.svg';
+import mealIcon from '../images/mealIcon.svg';
 
 class Footer extends React.Component {
   render() {
     return (
       <footer data-testid="footer">
-          <button data-testid="drinks-bottom-btn"><img src={drinkIcon} alt="drink"/></button>
-          <button data-testid="explore-bottom-btn"></button>
-          <button data-testid="food-bottom-btn"></button>
+        <input data-testid="drinks-bottom-btn" type="image" src={drinkIcon} alt="drink" />
+        <input data-testid="explore-bottom-btn" type="image" src={exploreIcon} alt="explore" />
+        <input data-testid="food-bottom-btn" type="image" src={mealIcon} alt="food"/>
       </footer>
     );
   }

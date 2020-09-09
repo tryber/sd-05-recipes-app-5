@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Login from './Pages/Login'
-import Footer from './components/Footer';
 
 function App() {
   return (
@@ -27,7 +26,6 @@ function App() {
         </g>
       </svg>
       <Login />
-      <Footer />
     </div>
   );
 }
