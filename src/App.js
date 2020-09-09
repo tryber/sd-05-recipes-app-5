@@ -4,8 +4,6 @@ import Login from './Pages/Login';
 import Footer from './components/Footer';
 import Comidas from './components/comidas';
 import './App.css';
-import './components/animatedimage';
-// import AImage from './components/animatedimage';
 
 function App() {
   return (
