@@ -12,14 +12,12 @@ export const getFoodByName = (name) => {
   );
 };
 
-
 export const getFoodByIngredients = (ingredient) => {
   const URL = `${foodUrl}filter.php?i=${ingredient}`;
   return fetch(URL).then((response) =>
     response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json)))
   );
 };
-
 
 export const getFoodByLetter = (letter) => {
   const URL = `${foodUrl}search.php?f=${letter}`;
@@ -28,14 +26,12 @@ export const getFoodByLetter = (letter) => {
   );
 };
 
-
 export const getFoodCategories = () => {
   const URL = `${foodUrl}list.php?c=list`;
   return fetch(URL).then((response) =>
     response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json)))
   );
 };
-
 
 export const getFoodIngredients = () => {
   const URL = `${foodUrl}list.php?i=list`;
@@ -44,11 +40,9 @@ export const getFoodIngredients = () => {
   );
 };
 
-
 export const getRandomFood = () => {
   const URL = `${foodUrl}random.php`;
   return fetch(URL).then((response) =>
     response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json)))
   );
 };
-
