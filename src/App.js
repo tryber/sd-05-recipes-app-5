@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Login from './Pages/Login';
 import Footer from './components/Footer';
-import Comidas from './components/comidas';
+import Explorar from './Pages/Explorar';
+import Comidas from './Pages/ExplorarComidas';
+import Bebidas from './Pages/ExplorarBebidas';
 import './App.css';
 
 function App() {
@@ -12,13 +14,13 @@ function App() {
         <Switch>
           <Route exact path="/" component={Login} />
           <Route path="/footer" component={Footer} />
+          <Route path="/explorar" component={Explorar} />
           <Route path="/comidas" component={Comidas} />
-          {/* <Route path="/bebidas" component={Bebidas} />
-          <Route path="/comidas/{id-da-receita}" component={IdReceitaComida} />
+          <Route path="/bebidas" component={Bebidas} />
+          {/* <Route path="/comidas/{id-da-receita}" component={IdReceitaComida} />
           <Route parth="/bebidas/{id-da-receita}" component={IdReceitaBebida} />
           <Route path="/comidas/{id-da-receita}/in-progress" component={IdComidaInProgress} />
           <Route path="/bebidas/{id-da-receita}/in-progress" component={IdBebidaInProgress} />
-          <Route path="/explorar" component={Explorar} />
           <Route path="/explorar/comidas" component={ExplorarComidas} />
           <Route path="/explorar/bebidas" component={ExplorarBebidas} />
           <Route path="/explorar/comidas/ingredientes" component={ExplorarComidasIngredientes} />
@@ -29,6 +31,11 @@ function App() {
           <Route path="/receitas-favoritas" component={ReceitasFavoritas} /> */}
         </Switch>
       </BrowserRouter>
+      <Login />
+      <Explorar />
+      <Comidas />
+      <Bebidas />
+      <Footer />
     </div>
   );
 }
