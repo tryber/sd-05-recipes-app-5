@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/* import React, { useState } from 'react';
 import { Router } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import profileIcon from '../images/profileIcon.svg';
@@ -33,4 +33,4 @@ const Header = ({ children, esconde }) => {
   );
 };
 
-export default Header;
+export default Header; */
