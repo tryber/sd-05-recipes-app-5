@@ -2,9 +2,13 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Login from './Pages/Login';
 import Footer from './components/Footer';
+<<<<<<< HEAD
 import Explorar from './Pages/Explorar';
 import Comidas from './Pages/ExplorarComidas';
 import Bebidas from './Pages/ExplorarBebidas';
+=======
+import Comidas from './components/comidas';
+>>>>>>> 6fe97da8c3829252f49c254a81bb68b79d1bcebb
 import './App.css';
 
 function App() {
@@ -14,10 +18,16 @@ function App() {
         <Switch>
           <Route exact path="/" component={Login} />
           <Route path="/footer" component={Footer} />
+<<<<<<< HEAD
           <Route path="/explorar" component={Explorar} />
           <Route path="/comidas" component={Comidas} />
           <Route path="/bebidas" component={Bebidas} />
           {/* <Route path="/comidas/{id-da-receita}" component={IdReceitaComida} />
+=======
+          <Route path="/comidas" component={Comidas} />
+          {/* <Route path="/bebidas" component={Bebidas} />
+          <Route path="/comidas/{id-da-receita}" component={IdReceitaComida} />
+>>>>>>> 6fe97da8c3829252f49c254a81bb68b79d1bcebb
           <Route parth="/bebidas/{id-da-receita}" component={IdReceitaBebida} />
           <Route path="/comidas/{id-da-receita}/in-progress" component={IdComidaInProgress} />
           <Route path="/bebidas/{id-da-receita}/in-progress" component={IdBebidaInProgress} />
@@ -31,11 +41,14 @@ function App() {
           <Route path="/receitas-favoritas" component={ReceitasFavoritas} /> */}
         </Switch>
       </BrowserRouter>
+<<<<<<< HEAD
       <Login />
       <Explorar />
       <Comidas />
       <Bebidas />
       <Footer />
+=======
+>>>>>>> 6fe97da8c3829252f49c254a81bb68b79d1bcebb
     </div>
   );
 }
