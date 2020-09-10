@@ -1,6 +1,7 @@
-import { combineReducers } from 'redux';
+/* import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-  // swPlanetss, filters,
+  swPlanetss, filters,
 });
 export default rootReducer;
+ */
