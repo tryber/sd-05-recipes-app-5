@@ -32,6 +32,9 @@ function App() {
         </Switch>
       </BrowserRouter>
       <Login />
+      <Explorar />
+      <Comidas />
+      <Bebidas />
       <Footer />
     </div>
   );
