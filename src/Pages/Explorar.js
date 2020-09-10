@@ -17,7 +17,7 @@ class Explorar extends Component {
           </button>
         </Link>
       </div>
-    )
+    );
   }
 }
 
