@@ -4,13 +4,14 @@ import Login from './Pages/Login';
 import Footer from './components/Footer';
 import Comidas from './components/comidas';
 import './App.css';
-import './components/animatedimage';
+import Header from './components/Header';
 // import AImage from './components/animatedimage';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+      <Header />
         <Switch>
           <Route exact path="/" component={Login} />
           <Route path="/footer" component={Footer} />
