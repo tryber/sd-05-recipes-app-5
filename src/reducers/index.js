@@ -1,7 +1,9 @@
-/* import { combineReducers } from 'redux';
+import { combineReducers } from 'redux';
+import initialRecipesScr from './initialRecipesSrc';
 
 const rootReducer = combineReducers({
-  swPlanetss, filters,
+  initialRecipesScr,
 });
 
-export default rootReducer; */
+export default rootReducer;
+

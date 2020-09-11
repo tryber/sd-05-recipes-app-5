@@ -11,7 +11,7 @@ class Login extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
   }
-
+ 
   handleClick() {
     const { email } = this.state;
     localStorage.setItem('mealsToken', 1);
