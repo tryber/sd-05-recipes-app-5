@@ -28,7 +28,7 @@ const GetFoodApi = (target, input, save) => {
   }
 };
 
-const searchBtn = (recipeType, target, input, setDrink, setFood) => (
+const searchBtn = (receitas, target, input, setDrink, setFood) => (
   <button
     data-testid="exec-search-btn"
     className="search-btn"
@@ -37,7 +37,7 @@ const searchBtn = (recipeType, target, input, setDrink, setFood) => (
       if (target === 'letter' && input.length > 1) {
         return alert('Sua busca deve conter somente 1 lettra');
       }
-      return recipeType === 'Comidas'
+      return receitas === 'Comidas'
         ? GetFoodApi(target, input, setFood)
         : GetDrinkApi(target, input, setDrink);
     }}
@@ -61,7 +61,7 @@ const SearchBar = ({ recipeType }) => {
           id="ing"
           name="target"
         />
-        <label htmlFor="ing">Ingredientes</label>
+        <label htmlFor="ing">Ingrediente</label>
         <input
           data-testid="name-search-radio"
           onChange={() => setTarget('name')}

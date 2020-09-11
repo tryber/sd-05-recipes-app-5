@@ -11,7 +11,7 @@ const Header = ({ children, hideSearch }) => {
     <Fragment>
       <div>
         <Link to="/perfil">
-          <img data-testid="profile-top-btn" src={profileIcon} alt="profile icon" />
+          <img data-testid="profile-top-btn" src={profileIcon} alt="profile" />
         </Link>
         <h2 data-testid="page-title">{children}</h2>
         {hideSearch ? (

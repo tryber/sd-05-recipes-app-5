@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Login from './Pages/Login';
-import Footer from './components/Footer'; // só testando a renderização
-import Header from './components/Header';
 import Provider from './context/Provider';
+import Foods from './Pages/Foods';
 import './App.css';
 
 function App() {
@@ -11,7 +10,10 @@ function App() {
     <div>
       <Provider>
         <BrowserRouter>
-          <Header />
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route path="/comidas" component={Foods} />
+        </Switch>
         </BrowserRouter>
       </Provider>
     </div>
