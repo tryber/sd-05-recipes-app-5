@@ -1,41 +1,26 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Login from './Pages/Login';
-import Footer from './components/Footer';
-import Explorar from './Pages/Explorar';
-import Comidas from './Pages/ExplorarComidas';
-import Bebidas from './Pages/ExplorarBebidas';
+import Provider from './context/Provider';
+import Foods from './Pages/Foods';
+import Drinks from './Pages/Drinks';
+import CardDetails from './components/CardDetails';
 import './App.css';
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route path="/footer" component={Footer} />
-          <Route path="/explorar" component={Explorar} />
-          <Route path="/comidas" component={Comidas} />
-          <Route path="/bebidas" component={Bebidas} />
-          {/* <Route path="/comidas/{id-da-receita}" component={IdReceitaComida} />
-          <Route parth="/bebidas/{id-da-receita}" component={IdReceitaBebida} />
-          <Route path="/comidas/{id-da-receita}/in-progress" component={IdComidaInProgress} />
-          <Route path="/bebidas/{id-da-receita}/in-progress" component={IdBebidaInProgress} />
-          <Route path="/explorar/comidas" component={ExplorarComidas} />
-          <Route path="/explorar/bebidas" component={ExplorarBebidas} />
-          <Route path="/explorar/comidas/ingredientes" component={ExplorarComidasIngredientes} />
-          <Route path="/explorar/bebidas/ingredientes" component={ExplorarBebidasIngredientes} />
-          <Route path="/explorar/comidas/area" component={ExplorarComidasArea} />
-          <Route path="/perfil" component={Perfil} />
-          <Route path="/receitas-feitas" component={ReceitasFeitas} />
-          <Route path="/receitas-favoritas" component={ReceitasFavoritas} /> */}
-        </Switch>
-      </BrowserRouter>
-      <Login />
-      <Explorar />
-      <Comidas />
-      <Bebidas />
-      <Footer />
+      <Provider>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route path="/comidas" component={Foods} />
+            <Route path="/bebidas" component={Drinks} />
+            <Route path="/comidas/:id" component={CardDetails} />
+            <Route path="/bebidas/:id" component={CardDetails} />
+          </Switch>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }

@@ -31,9 +31,7 @@ class Login extends React.Component {
         <input
           data-testid="password-input"
           type="password"
-          onChange={(event) =>
-            this.setState({ pwLength: event.target.value.length })
-          }
+          onChange={(event) => this.setState({ pwLength: event.target.value.length })}
           placeholder="Senha"
         />
         <Link to="/comidas">

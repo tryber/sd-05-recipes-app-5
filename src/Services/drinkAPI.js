@@ -15,7 +15,7 @@ export const getDrinksByName = (name) => {
 export const getDrinksByIngredients = (ingredient) => {
   const URL = `${drinkUrl}filter.php?i=${ingredient}`;
   return fetch(URL).then((response) =>
-    response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json))),
+    response.json().then((data) => (response.ok ? Promise.resolve(data) : Promise.reject(data))),
   );
 };
 
