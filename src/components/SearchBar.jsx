@@ -12,14 +12,14 @@ const GetDrinkApi = (target, input, save) => {
         if (!data.drinks) {
           return alert('Sinto muito, não encontramos nenhuma receita para esses filtros.');
         }
-        save(data.drinks);
+        return save(data.drinks);
       });
     case 'ing':
       return getDrinksByIngredients(input).then((data) => save(data.drinks));
 
     case 'letter':
       return getDrinksByLetter(input).then((data) => save(data.drinks));
-    default:
+    default: return target;
   }
 };
 
@@ -30,13 +30,13 @@ const GetFoodApi = (target, input, save) => {
         if (!data.meals) {
           return alert('Sinto muito, não encontramos nenhuma receita para esses filtros.');
         }
-        save(data.meals);
+        return save(data.meals);
       });
     case 'ing':
       return getFoodByIngredients(input).then((data) => save(data.meals));
     case 'letter':
       return getFoodByLetter(input).then((data) => save(data.meals));
-    default:
+    default: return target;
   }
 };
 const searchBtn = (receitas, target, input, setDrink, setFood) => (

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Context from './Context';
 import PropTypes from 'prop-types';
+import Context from './Context';
 
 function Provider({ children }) {
   const [food, setFood] = useState([]);
