@@ -1,21 +1,18 @@
 import React from 'react';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { connect } from 'react-redux';
-import { fetchRecipes } from '../actions/initialRecipes';
-import { getFoodByName } from '../Services/foodAPI';
+import Cards from '../components/Cards';
 
-function Foods() {
-  return (
-    <div>
-      <h1>Comidas</h1>
-      <Footer />
-    </div>
-  );
+class Foods extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Cards />
+        <Footer />
+      </div>
+    );
+  }
 }
 
-
-const mapDispatchToProps = (dispatch) => ({
-  getRecipes: (meals) => dispatch(fetchRecipes(getFoodByName)),
-});
-
-export default connect (null, mapDispatchToProps)(Foods);
+export default Foods;

@@ -11,7 +11,7 @@ class Login extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
   }
- 
+
   handleClick() {
     const { email } = this.state;
     localStorage.setItem('mealsToken', 1);
@@ -31,9 +31,7 @@ class Login extends React.Component {
         <input
           data-testid="password-input"
           type="password"
-          onChange={(event) =>
-            this.setState({ pwLength: event.target.value.length })
-          }
+          onChange={(event) => this.setState({ pwLength: event.target.value.length })}
           placeholder="Senha"
         />
         <Link to="/comidas">
