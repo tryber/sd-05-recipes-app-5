@@ -3,5 +3,5 @@
 const rootReducer = combineReducers({
   swPlanetss, filters,
 });
-
-export default rootReducer; */
+export default rootReducer;
+ */
