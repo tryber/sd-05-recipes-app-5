@@ -4,6 +4,7 @@ import Login from './Pages/Login';
 import Provider from './context/Provider';
 import Foods from './Pages/Foods';
 import Drinks from './Pages/Drinks';
+import Perfil from './Pages/Perfil';
 import CardDetails from './components/CardDetails';
 import './App.css';
 
@@ -14,6 +15,7 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Login} />
+            <Route path="/perfil" component={Perfil} />
             <Route path="/comidas" component={Foods} />
             <Route path="/bebidas" component={Drinks} />
             <Route path="/comidas/:id" component={CardDetails} />
