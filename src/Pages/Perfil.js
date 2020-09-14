@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const aE = {
+let aE=''
+if(localStorage.getItem('user')){aE = {
   email: JSON.parse(localStorage.getItem('user')),
 };
+}
 function hC() {
   localStorage.clear();
-  console.log('punkRock');
 }
 
 export default class Perfil extends Component {
@@ -18,7 +19,9 @@ export default class Perfil extends Component {
         <div>
           <Header />
         </div>
+        {aE !== '' ?
         <p data-testid="profile-email">{aE.email.email}</p>
+        : <p>Sem e-mail</p>}
         <Link to="/receitas-feitas">
           <button type="button" data-testid="profile-done-btn">
           Receitas Feitas
