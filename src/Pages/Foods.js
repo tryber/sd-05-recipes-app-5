@@ -7,7 +7,7 @@ class Foods extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header>Comidas</Header>
         <Cards />
         <Footer />
       </div>

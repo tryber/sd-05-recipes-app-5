@@ -1,24 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
-// Aguardando REDUCERS E ACTIONS para ser importado
-// e conectar com a função
-
-class Explorar extends Component {
-  render() {
-    return (
-      <div>
-        <Link to="/comidas">
-          <button type="button" data-testid="explore-food">EXPLORAR COMIDAS
-          </button>
-        </Link>
-        <Link to="/bebidas">
-          <button type="button" data-testid="explore-drinks">EXPLORAR BEBIDAS
-          </button>
-        </Link>
-      </div>
-    );
-  }
-}
+const Explorar = () => (
+  <div>
+    <Header hideSearch>Explorar</Header>
+    <Link to="/explorar/comidas" data-testid="explore-food" className="btn">
+      Explorar Comidas
+    </Link>
+    <Link to="/explorar/bebidas" data-testid="explore-drinks" className="btn">
+      Explorar Bebidas
+    </Link>
+    <Footer />
+  </div>
+);
 
 export default Explorar;
