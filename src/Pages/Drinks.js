@@ -6,7 +6,7 @@ import Cards from '../components/Cards';
 function Drinks() {
   return (
     <div>
-      <Header />
+      <Header>Bebidas</Header>
       <Cards />
       <Footer />
     </div>

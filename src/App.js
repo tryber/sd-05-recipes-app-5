@@ -5,6 +5,7 @@ import Provider from './context/Provider';
 import Foods from './Pages/Foods';
 import Drinks from './Pages/Drinks';
 import Perfil from './Pages/Perfil';
+import Explorar from './Pages/Explorar';
 import CardDetails from './components/CardDetails';
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
             <Route path="/perfil" component={Perfil} />
             <Route path="/comidas" component={Foods} />
             <Route path="/bebidas" component={Drinks} />
+            <Route path="/explorar" component={Explorar} />
             <Route path="/comidas/:id" component={CardDetails} />
             <Route path="/bebidas/:id" component={CardDetails} />
           </Switch>
