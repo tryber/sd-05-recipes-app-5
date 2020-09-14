@@ -6,7 +6,6 @@ import Footer from '../components/Footer';
 const aE = {
   email: JSON.parse(localStorage.getItem('user')),
 };
-
 function hC() {
   localStorage.clear();
   console.log('punkRock');
