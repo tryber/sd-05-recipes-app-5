@@ -10,7 +10,7 @@ export default function CardDetails() {
 
   // const { setFood, setDrink } = useState();
 
-  // const { location: { pathname } } = useHistory(); 
+  // const { location: { pathname } } = useHistory();
 
   // useEffect(() => {
   //   if (pathname === '/bebidas') {
