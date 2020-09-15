@@ -46,3 +46,10 @@ export const getRandomFood = () => {
     response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json))),
   );
 };
+
+export const getFoodsById = (id) => {
+  const URL = `${foodUrl}lookup.php?i=${id}`;
+  return fetch(URL).then((response) =>
+    response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json))),
+  );
+};
