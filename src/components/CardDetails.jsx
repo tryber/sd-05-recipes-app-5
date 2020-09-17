@@ -12,13 +12,13 @@ export default function CardDetails() {
   if (pathname === `/bebidas/${id}`) {
     return (
       <div>
-        <CardDrinksDetails />;
+        <CardDrinksDetails />
       </div>
     );
   }
   return (
     <div>
-      <CardFoodsDetails />;
+      <CardFoodsDetails />
     </div>
   );
 }

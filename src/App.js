@@ -13,6 +13,7 @@ import ExplorarB from './Pages/ExplorarB';
 import ReceitasFeitas from './Pages/ReceitasFeitas';
 import FoodsIngredients from './Pages/ExplorIngFood';
 import DrinksIngredients from './Pages/ExplorIngDrink';
+import Blablabla from './Pages/ExplorarArea';
 import './App.css';
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
             <Route exact path="/" component={Login} />
             <Route path="/explorar/comidas/ingredientes" component={FoodsIngredients} />
             <Route path="/explorar/bebidas/ingredientes" component={DrinksIngredients} />
-            {/* <Route path="/explorar/comidas/area" component={} /> */}
+            <Route path="/explorar/comidas/area" component={Blablabla} />
             <Route path="/comidas/:id" component={CardDetails} />
             <Route path="/bebidas/:id" component={CardDetails} />
             <Route path="/perfil" component={Perfil} />
@@ -33,7 +34,7 @@ function App() {
             <Route path="/explorar/comidas" component={ExplorarC} />
             <Route path="/explorar/bebidas" component={ExplorarB} />
             <Route path="/explorar" component={Explorar} />
-            <Route path="/receitas-feitas" component={ReceitasFeitas} />
+            {/* <Route path="/receitas-feitas" component={ReceitasFeitas} /> */}
           </Switch>
         </BrowserRouter>
       </Provider>

@@ -25,7 +25,7 @@ class Login extends React.Component {
     const { pwLength, email } = this.state;
     return (
       <div className="login">
-        <ReactAudioPlayer autoPlay loop src={sound} volume={0.8} />
+        <ReactAudioPlayer loop src={sound} volume={0.8} />
         <h1 class="MonsterChef">Monster Chef</h1>
         <input className="form-group"
           data-testid="email-input"

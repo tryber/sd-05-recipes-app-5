@@ -22,6 +22,9 @@ function CardFoodsDetails() {
           <img alt="share" src={shareIcon} data-testid="share-btn" />
           <img alt="fav" src={favIcon} data-testid="favorite-btn" />
           <p data-testid="recipe-category">{ele.strCategory}</p>
+          <button type="button" className="start-recipe" data-testid="start-recipe-btn">
+            Iniciar Receita
+          </button>
         </div>
       ))}
     </div>

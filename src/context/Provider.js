@@ -6,7 +6,10 @@ function Provider({ children }) {
   const [food, setFood] = useState([]);
   const [drink, setDrink] = useState([]);
   const [receitas, setReceitas] = useState('Comidas');
+  const [dataFoodAreas, setDataFoodAreas] = useState([]);
+  const [foodArea, setFoodArea] = useState(false);
   const [categories, setCategories] = useState([]);
+  const [recipeDone, setRecipeDone] = useState([]);
   const dataContext = {
     food,
     setFood,
@@ -14,8 +17,14 @@ function Provider({ children }) {
     setDrink,
     receitas,
     setReceitas,
+    dataFoodAreas,
+    setDataFoodAreas,
+    foodArea,
+    setFoodArea,
     categories,
     setCategories,
+    recipeDone,
+    setRecipeDone
   };
   return <Context.Provider value={dataContext}>{children}</Context.Provider>;
 }
