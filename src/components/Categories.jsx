@@ -1,31 +1,32 @@
-// import React, { Component, useContext, useEffect} from 'react';
-// import Context from '../context/Context';
-// import { Link } from 'react-router-dom';
-// import { getFoodCategories, getDrinksCategories } from '../Services/foodAPI';
+import React, { useContext, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import Context from '../context/Context';
+import { getDrinksCategories } from '../Services/drinkAPI';
+import { getFoodCategories } from '../Services/foodAPI';
 
-// const hC = (e) => {
-//   getFoodCategories(e).filter((comidaFiltrada) => (comidaFiltrada))
-//   .then((comidaFiltrada) => getItem(comidaFiltrada))
-//   }
+function Categories() {
+  const {
+    location: { pathname },
+  } = useHistory();
+  const { setCategories, categories } = useContext(Context);
+  useEffect(() => {
+    if (pathname === '/bebidas') {
+      getDrinksCategories().then((data) => setCategories(data.drinks));
+    } else if (pathname === '/comidas') {
+      getFoodCategories().then((data) => setCategories(data.meals));
+    }
+  }, [pathname]);
+  return (
+    <div>
+      {categories.slice(0, 5).map((element) => (
+        <div>
+          <button data-testid={`${element.strCategory}-category-filter`}>
+            {element.strCategory}
+          </button>
+        </div>
+      ))}
+    </div>
+  );
+}
 
-// export default class TelaPrincipal extends Component {
-//   render() {
-//     return (
-//       <div>
-//       <Link>
-//         <button
-//           onClick={hc()}
-//           data-testid={'${categoryName}-category-filter'}
-//           value={ category.strCategory }
-//         >Categories
-//         </button>
-//       </Link>
-//         Principal
-//       </div>
-//     )
-//   }
-// }
-
-/* data-testid=`${index}-recipe-card`
-data-testid=`${index}-card-img`
-data-testid=`${index}-card-name` */
+export default Categories;

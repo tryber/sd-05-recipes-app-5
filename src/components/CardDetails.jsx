@@ -1,36 +1,24 @@
 import React from 'react';
-// import { useHistory, useParams } from 'react-router-dom';
-// import { getFoodsById } from '../Services/foodAPI';
-// import { getDrinksById } from '../Services/drinkAPI';
-// import Header from './Header';
-// import Footer from './Footer';
+import { useHistory, useParams } from 'react-router-dom';
+import CardDrinksDetails from './CardDrinksDetails';
+import CardFoodsDetails from './CardFoodsDetails';
 
 export default function CardDetails() {
-  // const { id } = useParams();
+  const { id } = useParams();
+  const {
+    location: { pathname },
+  } = useHistory();
 
-  // const { setFood, setDrink } = useState();
-
-  // const { location: { pathname } } = useHistory();
-
-  // useEffect(() => {
-  //   if (pathname === '/bebidas') {
-  //     checkType = 'bebidas';
-  //     getDrinksById(id).then((data) => setDrink(data.drinks));
-  //   } else if (pathname === '/comidas') {
-  //     checkType = 'comidas';
-  //     getFoodById(id).then((data) => setFood(data.meals));
-  //   }
-  // }, [pathname]);
-
-  // if (checkType === 'bebidas') {
-  //   return <CardDrinksDetails />;
-  // } else if (checkType === 'comidas') {
-  //   return <CardFoodsDetails />;
-  //   // const {id} = useParams();
-  //   // console.log(id)
-  // }
-
+  if (pathname === `/bebidas/${id}`) {
+    return (
+      <div>
+        <CardDrinksDetails />;
+      </div>
+    );
+  }
   return (
-    <div>OI details</div>
+    <div>
+      <CardFoodsDetails />;
+    </div>
   );
 }
