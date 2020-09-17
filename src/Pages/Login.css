@@ -5,15 +5,15 @@
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   height: 100vh;
+  justify-content: center;
 }
 
 .MonsterChef {
-    padding-bottom: 2%;
-    font-size: 8vh;
-    color: greenyellow;
-    font-style: italic;
-    text-shadow: 2px 2px 5px red;
+  color: greenyellow;
+  font-size: 8vh;
+  font-style: italic;
+  padding-bottom: 2%;
+  text-shadow: 2px 2px 5px red;
 }

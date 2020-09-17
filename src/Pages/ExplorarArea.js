@@ -39,23 +39,18 @@ const selectArea = (setFood, setArea, dataAreas, setFoodArea) => (
 );
 
 const Blablabla = () => {
-    const {
-        food,
-        setFood,
-        dataFoodAreas,
-        setDataFoodAreas,
-        foodArea,
-        setFoodArea,
-        } = useContext(Context);
-useEffect(() => {
+  const { food, setFood, dataFoodAreas, setDataFoodAreas, foodArea, setFoodArea } = useContext(
+    Context,
+  );
+  useEffect(() => {
     getFoodAreas().then((data) => setDataFoodAreas(data.meals));
-    }, [setDataFoodAreas]);
-useEffect(() => {
+  }, [setDataFoodAreas]);
+  useEffect(() => {
     if (foodArea) {
-        getFoodByArea(foodArea).then((data) => setFood(data.meals.slice(0, 12)));
-            }
-          }, [foodArea, setFood]);
-let foodArray = food;
+      getFoodByArea(foodArea).then((data) => setFood(data.meals.slice(0, 12)));
+    }
+  }, [foodArea, setFood]);
+  let foodArray = food;
   if (!Array.isArray(food)) {
     foodArray = [];
     alert('Não tem pão velho');

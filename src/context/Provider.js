@@ -24,7 +24,7 @@ function Provider({ children }) {
     categories,
     setCategories,
     recipeDone,
-    setRecipeDone
+    setRecipeDone,
   };
   return <Context.Provider value={dataContext}>{children}</Context.Provider>;
 }

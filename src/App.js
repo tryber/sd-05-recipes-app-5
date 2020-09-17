@@ -10,7 +10,7 @@ import Explorar from './Pages/Explorar';
 import CardDetails from './components/CardDetails';
 import ExplorarC from './Pages/ExplorarC';
 import ExplorarB from './Pages/ExplorarB';
-import ReceitasFeitas from './Pages/ReceitasFeitas';
+// import ReceitasFeitas from './Pages/ReceitasFeitas';
 import FoodsIngredients from './Pages/ExplorIngFood';
 import DrinksIngredients from './Pages/ExplorIngDrink';
 import Blablabla from './Pages/ExplorarArea';
