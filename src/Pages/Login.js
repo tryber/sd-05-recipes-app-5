@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css'
+import ReactAudioPlayer from 'react-audio-player';
+import sound from '../Sonoplastia/mastermusic.mp3'
 
 const regEmail = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
 class Login extends React.Component {
@@ -23,6 +25,7 @@ class Login extends React.Component {
     const { pwLength, email } = this.state;
     return (
       <div className="login">
+        <ReactAudioPlayer autoPlay loop src={sound} volume={0.8} />
         <h1 class="MonsterChef">Monster Chef</h1>
         <input className="form-group"
           data-testid="email-input"
