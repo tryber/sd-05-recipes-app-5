@@ -14,6 +14,7 @@ import ExplorarB from './Pages/ExplorarB';
 import FoodsIngredients from './Pages/ExplorIngFood';
 import DrinksIngredients from './Pages/ExplorIngDrink';
 import Blablabla from './Pages/ExplorarArea';
+import FoodProgress from './Pages/FoodProgress';
 import './App.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/explorar/comidas/ingredientes" component={FoodsIngredients} />
             <Route path="/explorar/bebidas/ingredientes" component={DrinksIngredients} />
             <Route path="/explorar/comidas/area" component={Blablabla} />
+            <Route path="/comidas/:id/in-progress" component={FoodProgress} />
             <Route path="/comidas/:id" component={CardDetails} />
             <Route path="/bebidas/:id" component={CardDetails} />
             <Route path="/perfil" component={Perfil} />

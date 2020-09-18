@@ -1,17 +1,54 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { getFoodsById } from '../Services/foodAPI';
 import Context from '../context/Context';
 import shareIcon from '../images/shareIcon.svg';
 import favIcon from '../images/whiteHeartIcon.svg';
+import Recomendation from '../components/Recomendation';
+import cardBtn from './inputs/cardBtn';
+
+function ingredients(food) {
+  if (food.length !== 0) {
+    const listIng = [];
+    for (let i = 1; i <= 15; i += 1) {
+      const ing = `strIngredient${i}`;
+      listIng.push(food[0][ing]);
+    }
+    return listIng;
+  }
+  return null;
+}
+
+function measure(food) {
+  if (food.length !== 0) {
+    const listMeas = [];
+    for (let i = 1; i <= 15; i += 1) {
+      const meas = `strMeasure${i}`;
+      listMeas.push(food[0][meas]);
+    }
+    return listMeas;
+  }
+  return null;
+}
 
 function CardFoodsDetails() {
   const { id } = useParams();
-  const { setFood, food } = useContext(Context);
+  const { food, setFood } = useContext(Context);
+  const [listFood, setListFood] = useState([]);
+  const [listMeasure, setListMeasure] = useState([]);
 
   useEffect(() => {
     getFoodsById(id).then((data) => setFood(data.meals));
   }, []);
+
+  useEffect(() => {
+    setListFood(ingredients(food));
+  }, [food]);
+
+  useEffect(() => {
+    setListMeasure(measure(food));
+  }, [food]);
 
   return (
     <div>
@@ -22,9 +59,25 @@ function CardFoodsDetails() {
           <img alt="share" src={shareIcon} data-testid="share-btn" />
           <img alt="fav" src={favIcon} data-testid="favorite-btn" />
           <p data-testid="recipe-category">{ele.strCategory}</p>
-          <button type="button" className="start-recipe" data-testid="start-recipe-btn">
-            Iniciar Receita
-          </button>
+          {listMeasure ? (
+            <div>
+              {listMeasure
+                .filter((el) => el !== ' - ' && el !== '')
+                .map((element, i) => (
+                  <p data-testid={`${i}-ingredient-name-and-measure`}>{listFood[i]} - {element}</p>
+                ))}
+            </div>
+          ) : (
+            <div>{console.log('oi')}</div>
+          )}
+          <p data-testid="instructions">{ele.strInstructions}</p>
+          <div data-testid="video">
+            <iframe src={food.strYoutube && food.strYoutube.replace('watch?v=', 'embed/')} />
+          </div>
+          <p data-testid="0-recomendation-card">Recomendadas<Recomendation /></p>
+          <Link to={`/comidas/${id}/in-progress`}>
+            <cardBtn data-testid="start-recipe-btn" />
+          </Link>
         </div>
       ))}
     </div>
