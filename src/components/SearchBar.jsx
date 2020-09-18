@@ -5,12 +5,14 @@ import Context from '../context/Context';
 import { getFoodByName, getFoodByLetter, getFoodByIngredients } from '../Services/foodAPI';
 import { getDrinksByName, getDrinksByLetter, getDrinksByIngredients } from '../Services/drinkAPI';
 
-const GetDrinkApi = (target, input, save) => {
+const GetDrinkApi = (target, input, save, history) => {
   switch (target) {
     case 'name':
       return getDrinksByName(input).then((data) => {
         if (!data.drinks) {
           return alert('Sinto muito, não encontramos nenhuma receita para esses filtros.');
+        } else if (data.drinks.length === 1) {
+          history.push(`/bebidas/${data.drinks[0].idDrink}`);
         }
         return save(data.drinks);
       });
@@ -19,16 +21,19 @@ const GetDrinkApi = (target, input, save) => {
 
     case 'letter':
       return getDrinksByLetter(input).then((data) => save(data.drinks));
-    default: return target;
+    default:
+      return target;
   }
 };
 
-const GetFoodApi = (target, input, save) => {
+const GetFoodApi = (target, input, save, history) => {
   switch (target) {
     case 'name':
       return getFoodByName(input).then((data) => {
         if (!data.meals) {
           return alert('Sinto muito, não encontramos nenhuma receita para esses filtros.');
+        } else if (data.meals.length === 1) {
+          history.push(`/comidas/${data.meals[0].idMeal}`);
         }
         return save(data.meals);
       });
@@ -36,10 +41,11 @@ const GetFoodApi = (target, input, save) => {
       return getFoodByIngredients(input).then((data) => save(data.meals));
     case 'letter':
       return getFoodByLetter(input).then((data) => save(data.meals));
-    default: return target;
+    default:
+      return target;
   }
 };
-const searchBtn = (receitas, target, input, setDrink, setFood) => (
+const searchBtn = (receitas, target, input, setDrink, setFood, history) => (
   <button
     data-testid="exec-search-btn"
     className="search-btn"
@@ -49,8 +55,8 @@ const searchBtn = (receitas, target, input, setDrink, setFood) => (
         return alert('Sua busca deve conter somente 1 (um) caracter');
       }
       return receitas === 'Comidas'
-        ? GetFoodApi(target, input, setFood)
-        : GetDrinkApi(target, input, setDrink);
+        ? GetFoodApi(target, input, setFood, history)
+        : GetDrinkApi(target, input, setDrink, history);
     }}
   >
     Buscar
@@ -61,9 +67,8 @@ const SearchBar = () => {
   const [target, setTarget] = useState('name');
   const [input, setInput] = useState('');
   const { setFood, setDrink, receitas, setReceitas } = useContext(Context);
-  const {
-    location: { pathname },
-  } = useHistory();
+  const history = useHistory();
+  const { location: { pathname } } = useHistory();
   useEffect(() => {
     if (pathname === '/bebidas') {
       setReceitas('Bebidas');
@@ -100,7 +105,7 @@ const SearchBar = () => {
         />
         <label htmlFor="letra">Primeira Letra</label>
       </div>
-      {searchBtn(receitas, target, input, setDrink, setFood)}
+      {searchBtn(receitas, target, input, setDrink, setFood, history)}
     </div>
   );
 };

@@ -1,12 +1,8 @@
 import React, { useContext } from 'react';
-import { Redirect } from 'react-router-dom';
 import Context from '../context/Context';
 
 function CardDrinks() {
   const { drink } = useContext(Context);
-  if (drink.length === 1) {
-    return <Redirect to={`/bebidas/${drink[0].idDrink}`} />;
-  }
   return (
     <div>
       {drink.slice(0, 12).map((element, index) => (

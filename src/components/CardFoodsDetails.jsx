@@ -51,7 +51,7 @@ function CardFoodsDetails() {
   }, [food]);
 
   return (
-    <div>
+    <div data-testid="0-recipe-card">
       {food.map((ele) => (
         <div>
           <img alt={ele.strMeal} src={ele.strMealThumb} data-testid="recipe-photo" />

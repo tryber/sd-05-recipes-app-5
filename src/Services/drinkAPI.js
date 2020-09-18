@@ -32,7 +32,12 @@ export const getDrinksCategories = () => {
     response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json))),
   );
 };
-
+export const getDCatFiltered = (cat) => {
+  const URL = `${drinkUrl}filter.php?c=${cat}`;
+  return fetch(URL).then((response) =>
+    response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json))),
+  );
+};
 export const getDrinksIngredients = () => {
   const URL = `${drinkUrl}list.php?i=list`;
   return fetch(URL).then((response) =>

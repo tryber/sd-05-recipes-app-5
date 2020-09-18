@@ -60,6 +60,12 @@ export const getFoodIngredients = () => {
     response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json))),
   );
 };
+export const getFCatFiltered = (cat) => {
+  const URL = `${foodUrl}filter.php?c=${cat}`;
+  return fetch(URL).then((response) =>
+    response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json))),
+  );
+};
 
 export const getRandomFood = () => {
   const URL = `${foodUrl}random.php`;
