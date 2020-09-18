@@ -41,11 +41,8 @@ function FoodProgress() {
   }, []);
 
   useEffect(() => {
-    setListFood(ingredients(food));
-  }, [food]);
-
-  useEffect(() => {
-    setListMeasure(measure(food));
+    setListFood(ingredients(food),
+    setListMeasure(measure(food)));
   }, [food]);
 
   return (
@@ -58,17 +55,17 @@ function FoodProgress() {
             <img alt="share" src={shareIcon} data-testid="share-btn" />
             <img alt="fav" src={favIcon} data-testid="favorite-btn" />
             <p data-testid="recipe-category">{ele.strCategory}</p>
-
             {listMeasure ? (
-              <div>
+              <ul>
                 {listMeasure
                 .filter((el) => el !== ' - ' && el !== '')
                 .map((element, i) => (
-                  <p data-testid={`${i}-ingredient-name-and-measure`}>
+                  <li data-testid={`${i}-ingredient-step`}>
+                    <input type="checkbox" data-testid={`${i}-ingredient-name-and-measure`} />
                     {listFood[i]} - {element}
-                  </p>
+                  </li>
                 ))}
-              </div>
+              </ul>
             ) : (
               <div>{console.log('oi')}</div>
             )}

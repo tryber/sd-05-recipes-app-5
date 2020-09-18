@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+.recipes-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+
 footer {
   align-items: center;
   bottom: 0;

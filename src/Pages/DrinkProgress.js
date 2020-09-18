@@ -1,19 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getDrinksById } from '../Services/drinkAPI';
 import Context from '../context/Context';
 import shareIcon from '../images/shareIcon.svg';
 import favIcon from '../images/whiteHeartIcon.svg';
 import Recomendation from '../components/Recomendation';
 
-function preenche(drink) {
-  if (drink.length !== 0) {
+function preenche(drinkP) {
+  if (drinkP.length !== 0) {
     const vet1 = [];
     let conCat = '';
     for (let i = 1; i <= 15; i += 1) {
       const propri = `strIngredient${i}`;
       const propri2 = `strMeasure${i}`;
-      conCat = `${drink[0][propri]} ${drink[0][propri2]}`;
+      conCat = `${drinkP[0][propri]} ${drinkP[0][propri2]}`;
       vet1.push(conCat);
     }
     return vet1;
@@ -42,13 +42,16 @@ function CardDrinksDetails() {
             <img alt="fav" src={favIcon} data-testid="favorite-btn" />
             <p data-testid="recipe-category">{ele.strCategory}{ele.strAlcoholic}</p>
             {aux1 ? (
-              <div>
+              <ul>
                 {aux1
-                  .filter((el) => el !== 'null null' && el !== '')
+                  .filter((el) => el !== 'null null' && el !== ' ')
                   .map((element, index) => (
-                    <p data-testid={`${index}-ingredient-name-and-measure`}>{element}</p>
+                    <li data-testid={`${index}-ingredient-step`}>
+                      <input type="checkbox" data-testid={`${index}-ingredient-name-and-measure`} />
+                      {element}
+                    </li>
                   ))}
-              </div>
+              </ul>
             ) : (
               <div>{console.log('oi')}</div>
             )}
@@ -56,12 +59,11 @@ function CardDrinksDetails() {
             <Recomendation />
           </div>
         ))}
-        <Link to={`/bebidas/${id}/in-progress`}>
-          <button type="button" className="start-recipe" data-testid="start-recipe-btn">
-            Iniciar Receita
-          </button>
-        </Link>
+        <button type="button" className="start-recipe" data-testid="finish-recipe-btn">
+          Finalizar Receita
+        </button>
       </div>
+      {/* <Footer /> */}
     </div>
   );
 }

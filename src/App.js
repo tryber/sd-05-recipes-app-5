@@ -15,6 +15,8 @@ import FoodsIngredients from './Pages/ExplorIngFood';
 import DrinksIngredients from './Pages/ExplorIngDrink';
 import Blablabla from './Pages/ExplorarArea';
 import FoodProgress from './Pages/FoodProgress';
+import DrinkProgress from './Pages/DrinkProgress';
+import error404 from './Pages/error404';
 import './App.css';
 
 function App() {
@@ -28,11 +30,13 @@ function App() {
             <Route path="/explorar/bebidas/ingredientes" component={DrinksIngredients} />
             <Route path="/explorar/comidas/area" component={Blablabla} />
             <Route path="/comidas/:id/in-progress" component={FoodProgress} />
+            <Route path="/bebidas/:id/in-progress" component={DrinkProgress} />
             <Route path="/comidas/:id" component={CardDetails} />
             <Route path="/bebidas/:id" component={CardDetails} />
             <Route path="/perfil" component={Perfil} />
             <Route path="/comidas" component={Foods} />
             <Route path="/bebidas" component={Drinks} />
+            <Route path="/explorar/bebidas/area" component={error404} />
             <Route path="/explorar/comidas" component={ExplorarC} />
             <Route path="/explorar/bebidas" component={ExplorarB} />
             <Route path="/explorar" component={Explorar} />

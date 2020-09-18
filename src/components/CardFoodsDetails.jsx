@@ -6,7 +6,7 @@ import Context from '../context/Context';
 import shareIcon from '../images/shareIcon.svg';
 import favIcon from '../images/whiteHeartIcon.svg';
 import Recomendation from '../components/Recomendation';
-import cardBtn from './inputs/cardBtn';
+import CardBtn from './inputs/cardBtn';
 
 function ingredients(food) {
   if (food.length !== 0) {
@@ -62,7 +62,7 @@ function CardFoodsDetails() {
           {listMeasure ? (
             <div>
               {listMeasure
-                .filter((el) => el !== ' - ' && el !== '')
+                .filter((el) => el !== '  -  ' && el !== '')
                 .map((element, i) => (
                   <p data-testid={`${i}-ingredient-name-and-measure`}>{listFood[i]} - {element}</p>
                 ))}
@@ -74,12 +74,12 @@ function CardFoodsDetails() {
           <div data-testid="video">
             <iframe src={food.strYoutube && food.strYoutube.replace('watch?v=', 'embed/')} />
           </div>
-          <p data-testid="0-recomendation-card">Recomendadas<Recomendation /></p>
-          <Link to={`/comidas/${id}/in-progress`}>
-            <cardBtn data-testid="start-recipe-btn" className="start-recipe" />
-          </Link>
+          <Recomendation />
         </div>
       ))}
+      <Link to={`/comidas/${id}/in-progress`}>
+        <CardBtn data-testid="start-recipe-btn" className="start-recipe" />
+      </Link>
     </div>
   );
 }
