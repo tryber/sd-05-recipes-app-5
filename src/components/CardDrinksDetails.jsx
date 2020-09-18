@@ -25,11 +25,9 @@ function CardDrinksDetails() {
   const { id } = useParams();
   const { setDrink, drink } = useContext(Context);
   const [aux1, setAux1] = useState([]);
-
   useEffect(() => {
     getDrinksById(id).then((data) => setDrink(data.drinks));
   }, []);
-
   useEffect(() => {
     setAux1(preenche(drink));
   }, [drink]);
@@ -59,9 +57,7 @@ function CardDrinksDetails() {
               <div>{console.log('oi')}</div>
             )}
             <p data-testid="instructions">{ele.strInstructions}</p>
-            <div>
-              <Recomendation />
-            </div>
+            <Recomendation />
           </div>
         ))}
       </div>

@@ -76,7 +76,7 @@ function CardFoodsDetails() {
           </div>
           <p data-testid="0-recomendation-card">Recomendadas<Recomendation /></p>
           <Link to={`/comidas/${id}/in-progress`}>
-            <cardBtn data-testid="start-recipe-btn" />
+            <cardBtn data-testid="start-recipe-btn" className="start-recipe" />
           </Link>
         </div>
       ))}
