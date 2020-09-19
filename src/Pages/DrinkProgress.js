@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getDrinksById } from '../Services/drinkAPI';
 import Context from '../context/Context';
 import shareIcon from '../images/shareIcon.svg';
 import favIcon from '../images/whiteHeartIcon.svg';
 import Recomendation from '../components/Recomendation';
+import InProgressBtn from '../components/inputs/inProgressBtn';
 
 function preenche(drinkP) {
   if (drinkP.length !== 0) {
@@ -59,11 +60,10 @@ function CardDrinksDetails() {
             <Recomendation />
           </div>
         ))}
-        <button type="button" className="start-recipe" data-testid="finish-recipe-btn">
-          Finalizar Receita
-        </button>
       </div>
-      {/* <Footer /> */}
+      <Link to={'/receitas-feitas'}>
+        <InProgressBtn className="start-recipe" data-testid="finish-recipe-btn" />
+      </Link>
     </div>
   );
 }

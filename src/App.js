@@ -18,6 +18,8 @@ import FoodProgress from './Pages/FoodProgress';
 import DrinkProgress from './Pages/DrinkProgress';
 import error404 from './Pages/error404';
 import ReceitasFeitas from './Pages/ReceitasFeitas';
+import ReceitasFavoritas from './Pages/ReceitasFavoritas';
+
 import './App.css';
 
 function App() {
@@ -42,6 +44,7 @@ function App() {
             <Route path="/explorar/bebidas" component={ExplorarB} />
             <Route path="/explorar" component={Explorar} />
             <Route path="/receitas-feitas" component={ReceitasFeitas} />
+            <Route path="/receitas-favoritas" component={ReceitasFavoritas} />
           </Switch>
         </BrowserRouter>
       </Provider>

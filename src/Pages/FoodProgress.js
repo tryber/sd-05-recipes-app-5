@@ -7,6 +7,7 @@ import Context from '../context/Context';
 import shareIcon from '../images/shareIcon.svg';
 import favIcon from '../images/whiteHeartIcon.svg';
 import InProgressBtn from '../components/inputs/inProgressBtn';
+// import FavBtn from '../components/FavBtn';
 
 function ingredients(food) {
   if (food.length !== 0) {
@@ -56,6 +57,7 @@ function FoodProgress() {
             <p data-testid="recipe-title">{ele.strMeal}</p>
             <img alt="share" src={shareIcon} data-testid="share-btn" />
             <img alt="fav" src={favIcon} data-testid="favorite-btn" />
+            {/* <FavBtn /> */}
             <p data-testid="recipe-category">{ele.strCategory}</p>
             {listMeasure ? (
               <ul>
@@ -74,7 +76,7 @@ function FoodProgress() {
             <p data-testid="instructions">{ele.strInstructions}</p>
           </div>
         ))}
-        <Link to={`/comidas/${id}/receitas-feitas`}>
+        <Link to={'/receitas-feitas'}>
           <InProgressBtn className="start-recipe" data-testid="finish-recipe-btn" />
         </Link>
       </div>
