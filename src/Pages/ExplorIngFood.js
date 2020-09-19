@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-// import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Context from '../context/Context';
@@ -7,13 +7,16 @@ import { getFoodByIngredients, getFoodIngredients } from '../Services/foodAPI';
 
 const FoodsIngredients = () => {
   const [ing, setIng] = useState([]);
-  const { setFood } = useContext(Context);
+  const { setFood, setIngFC } = useContext(Context);
+  const history = useHistory();
 
   const hC = (ingLogo) => {
     getFoodByIngredients(ingLogo).then((data) => {
       setFood(data.meals);
     });
-    return ing;
+    setIngFC(true);
+    history.push('/comidas');
+    // return ing;
   };
 
   const antonio = () =>

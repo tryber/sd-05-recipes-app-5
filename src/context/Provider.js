@@ -10,6 +10,8 @@ function Provider({ children }) {
   const [foodArea, setFoodArea] = useState(false);
   const [categories, setCategories] = useState([]);
   const [recipeDone, setRecipeDone] = useState([]);
+  const [ingFC, setIngFC] = useState(false);
+  const [ingDC, setIngDC] = useState(false);
   const [fav, setFav] = useState(false);
   const [share, setShare] = useState(false);
   const dataContext = {
@@ -31,6 +33,10 @@ function Provider({ children }) {
     setFav,
     share,
     setShare,
+    ingFC,
+    setIngFC,
+    ingDC,
+    setIngDC,
   };
   return <Context.Provider value={dataContext}>{children}</Context.Provider>;
 }

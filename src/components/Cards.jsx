@@ -14,27 +14,27 @@ function Cards() {
   const {
     location: { pathname },
   } = useHistory();
-  const { setFood, setDrink } = useContext(Context);
+  const { setFood, setDrink, ingDC, ingFC } = useContext(Context);
   // const [meal, setMeal] = useState(true);
   useEffect(() => {
-    if (pathname === '/bebidas') {
+    if (pathname === '/bebidas' && !ingDC) {
       checkType = 'bebidas';
       // setMeal(false);
       getDrinksByName('').then((data) => setDrink(data.drinks));
-    } else if (pathname === '/comidas') {
+    } else if (pathname === '/comidas' && !ingFC) {
       checkType = 'comidas';
       // setMeal(true);
       getFoodByName('').then((data) => setFood(data.meals));
     }
   }, [pathname]);
-  if (checkType === 'bebidas') {
+  if (checkType === 'bebidas' || ingDC) {
     return (
       <div>
         <CategoriesD />
         <CardDrinks />
       </div>
     );
-  } else if (checkType === 'comidas') {
+  } else if (checkType === 'comidas' || ingFC) {
     return (
       <div>
         <CategoriesF />
