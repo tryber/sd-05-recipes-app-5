@@ -1,65 +1,85 @@
-/* import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Context from '../context/Context';
+import copyToClipboard from 'clipboard-copy';
 import Header from '../components/Header';
-// import { getFoodIngredients, getDrinksIngredients } from '../Services/foodAPI';
+import shareIcon from '../images/shareIcon.svg';
 
-const receitasFeitas = () => {
-  const {
-    food,
-    setFood,
-    drinks,
-    setDrinks,
-    recipeDone,
-    setRecipeDone,
-  } = useContext(Context);
 
-useEffect(() => {
-  getFoodIngredients().then((data) => setFood(data.meals));
-}, []);
+const ReceitasDaVovo = (vovo) =>
+  vovo.map(
+    ({ id, type, area, category, alcoholicOrNot, name, image, doneDate, tags }, index) => (
+      <div>
+        <Link to={`/${type}s/${id}`}>
+          <img
+            className="done-receita-img"
+            data-testid={`${index}-horizontal-image`}
+            src={image}
+            alt={image}
+          />
+        </Link>
+        {type === 'comida' && (
+          <p data-testid={`${index}-horizontal-top-text`}>
+            {area} - {category}
+          </p>
+        )}
+        {type === 'bebida' && <p data-testid={`${index}-horizontal-top-text`}>{alcoholicOrNot}</p>}
+        <Link to={`/${type}s/${id}`}>
+          <p data-testid={`${index}-horizontal-name`}>{name}</p>
+        </Link>
+        <p data-testid={`${index}-horizontal-done-date`}>{doneDate}</p>
+        {type === 'comida' && (
+          <p>
+            <span data-testid={`${index}-${tags[0]}-horizontal-tag`}>{tags[0]}</span>
+            <span data-testid={`${index}-${tags[1]}-horizontal-tag`}>{tags[1]}</span>
+          </p>
+        )}
+        <input
+          className="done-receita-btn"
+          onClick={() => {
+            document.getElementById('share-btn').innerHTML = 'Link copiado!';
+            copyToClipboard(`http://localhost:3000/${type}s/${id}`);
+          }}
+          id="share-btn"
+          data-testid={`${index}-horizontal-share-btn`}
+          type="image"
+          src={shareIcon}
+          alt="share icon"
+        />
+      </div>
+    ),
+  );
 
-useEffect(() => {
-  getDrinksIngredients().then((data) => setIng(data.drinks));
-}, []);
-
-const ReceitasStorage = () => {
-  const [recipeDone, setRecipeDone] = useState([]);
+const ReceitasFeitas = () => {
+  const [vovo, setVovo] = useState([]);
+  const [receita, setReceitas] = useState([]);
+  useEffect(() => {
+    const storage = JSON.parse(localStorage.getItem('doneRecipes')) || [];
+    setReceitas(storage);
+    setVovo(storage);
+  }, [setVovo, setReceitas]);
+  return (
+    <div>
+      <Header hideSearch>Receitas Feitas</Header>
+      <div>
+        <button onClick={() => setVovo(receita)} data-testid="filter-by-all-btn">
+          All
+        </button>
+        <button
+          onClick={() => setVovo(receita.filter((recipe) => recipe.type === 'comida'))}
+          data-testid="filter-by-food-btn"
+        >
+          Food
+        </button>
+        <button
+          onClick={() => setVovo(receita.filter((recipe) => recipe.type === 'bebida'))}
+          data-testid="filter-by-drink-btn"
+        >
+          Drinks
+        </button>
+      </div>
+      {ReceitasDaVovo(vovo)}
+    </div>
+  );
 };
 
-  // const btnFiltro = colocar All, Food, Drinks;
-  // preciso chamar API - ok
-  // Filtrar resultado e mapear
-  // retornar isso para o botão
-
-return (
-  <div>
-    <Header />
-    <div>
-      <h1>Nome da Receita</h1>
-      <h1>Categoria</h1>
-      <h1>Área</h1>
-      <h1>Data da Receita</h1>
-    </div>
-    <div>
-      <Link>
-        <button>All</button>
-      </Link>
-      <Link>
-        <button>Food</button>
-      </Link>
-      <Link>
-        <button>Drinks</button>
-      </Link>
-    </div>
-    <button data-testid="filter-by-all-btn">Compartilhar</button>
-    giuliano travou aqui
-  </div>
-);
-}
-
-// data-testid="filter-by-food-btn"
-
-// src/images/shareIcon.svg (botão compartilhar)
-
-// export default ReceitasFeitas;
- */
+export default ReceitasFeitas;

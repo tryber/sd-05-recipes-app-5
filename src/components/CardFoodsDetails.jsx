@@ -62,7 +62,7 @@ function CardFoodsDetails() {
           {listMeasure ? (
             <div>
               {listMeasure
-                .filter((el) => el !== '  -  ' && el !== '')
+                .filter((el) => el !== ' - ' && el !== '')
                 .map((element, i) => (
                   <p data-testid={`${i}-ingredient-name-and-measure`}>{listFood[i]} - {element}</p>
                 ))}

@@ -17,6 +17,7 @@ import Blablabla from './Pages/ExplorarArea';
 import FoodProgress from './Pages/FoodProgress';
 import DrinkProgress from './Pages/DrinkProgress';
 import error404 from './Pages/error404';
+import ReceitasFeitas from './Pages/ReceitasFeitas';
 import './App.css';
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
             <Route path="/explorar/comidas" component={ExplorarC} />
             <Route path="/explorar/bebidas" component={ExplorarB} />
             <Route path="/explorar" component={Explorar} />
-            {/* <Route path="/receitas-feitas" component={ReceitasFeitas} /> */}
+            <Route path="/receitas-feitas" component={ReceitasFeitas} />
           </Switch>
         </BrowserRouter>
       </Provider>

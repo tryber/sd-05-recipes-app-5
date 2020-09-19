@@ -6,7 +6,8 @@ import { getFoodByName } from '../Services/foodAPI';
 import { getDrinksByName } from '../Services/drinkAPI';
 import CardFoods from '../components/CardFoods';
 import CardDrinks from '../components/CardDrinks';
-import Categories from '../components/Categories';
+import CategoriesD from '../components/CategoriesD';
+import CategoriesF from '../components/CategoriesF';
 
 let checkType = '';
 function Cards() {
@@ -29,14 +30,14 @@ function Cards() {
   if (checkType === 'bebidas') {
     return (
       <div>
-        <Categories />
+        <CategoriesD />
         <CardDrinks />
       </div>
     );
   } else if (checkType === 'comidas') {
     return (
       <div>
-        <Categories />
+        <CategoriesF />
         <CardFoods />;
       </div>
     );

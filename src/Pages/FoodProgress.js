@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { getFoodsById } from '../Services/foodAPI';
 import Context from '../context/Context';
 import shareIcon from '../images/shareIcon.svg';
 import favIcon from '../images/whiteHeartIcon.svg';
+import InProgressBtn from '../components/inputs/inProgressBtn';
 
 function ingredients(food) {
   if (food.length !== 0) {
@@ -70,11 +72,11 @@ function FoodProgress() {
               <div>{console.log('oi')}</div>
             )}
             <p data-testid="instructions">{ele.strInstructions}</p>
-            <button type="button" className="start-recipe" data-testid="finish-recipe-btn">
-              Finalizar Receita
-            </button>
           </div>
         ))}
+        <Link to={`/comidas/${id}/receitas-feitas`}>
+          <InProgressBtn className="start-recipe" data-testid="finish-recipe-btn" />
+        </Link>
       </div>
     </Fragment>
   );
