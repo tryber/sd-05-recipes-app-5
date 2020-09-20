@@ -13,7 +13,7 @@ import ExplorarB from './Pages/ExplorarB';
 // import ReceitasFeitas from './Pages/ReceitasFeitas';
 import FoodsIngredients from './Pages/ExplorIngFood';
 import DrinksIngredients from './Pages/ExplorIngDrink';
-import Blablabla from './Pages/ExplorarArea';
+import ExplorarArea from './Pages/ExplorarArea';
 import FoodProgress from './Pages/FoodProgress';
 import DrinkProgress from './Pages/DrinkProgress';
 import error404 from './Pages/error404';
@@ -31,7 +31,7 @@ function App() {
             <Route exact path="/" component={Login} />
             <Route path="/explorar/comidas/ingredientes" component={FoodsIngredients} />
             <Route path="/explorar/bebidas/ingredientes" component={DrinksIngredients} />
-            <Route path="/explorar/comidas/area" component={Blablabla} />
+            <Route path="/explorar/comidas/area" component={ExplorarArea} />
             <Route path="/comidas/:id/in-progress" component={FoodProgress} />
             <Route path="/bebidas/:id/in-progress" component={DrinkProgress} />
             <Route path="/comidas/:id" component={CardDetails} />
