@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 
 import Context from '../context/Context';
-import { getFoodCategories, getFCatFiltered, getFoodByName } from '../Services/foodAPI';
+import { getFoodCategories, getFCatFiltered, getFoodByName, getFood } from '../Services/foodAPI';
 
 let checkFilter = '';
 function CategoriesF() {
@@ -19,9 +19,14 @@ function CategoriesF() {
       checkFilter = cat;
     }
   }
-
+  function onCAll() {
+    getFood().then((data) => setFood(data.meals));
+  }
   return (
     <div>
+      <button onClick={() => onCAll()} value="All" data-testid="All-category-filter">
+        All
+      </button>
       {categories.slice(0, 5).map((element) => (
         <div>
           <button

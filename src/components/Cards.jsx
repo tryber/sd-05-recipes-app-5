@@ -15,15 +15,12 @@ function Cards() {
     location: { pathname },
   } = useHistory();
   const { setFood, setDrink, ingDC, ingFC } = useContext(Context);
-  // const [meal, setMeal] = useState(true);
   useEffect(() => {
     if (pathname === '/bebidas' && !ingDC) {
       checkType = 'bebidas';
-      // setMeal(false);
       getDrinksByName('').then((data) => setDrink(data.drinks));
     } else if (pathname === '/comidas' && !ingFC) {
       checkType = 'comidas';
-      // setMeal(true);
       getFoodByName('').then((data) => setFood(data.meals));
     }
   }, [pathname]);

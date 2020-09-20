@@ -18,8 +18,14 @@ function CategoriesD() {
       checkFilter = cat;
     }
   }
+  function onCAll() {
+    getDrinksByName('').then((data) => setDrink(data.drinks));
+  }
   return (
     <div>
+      <button onClick={() => onCAll()} data-testid="All-category-filter">
+        All
+      </button>
       {categories.slice(0, 5).map((element) => (
         <div>
           <button

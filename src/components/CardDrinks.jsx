@@ -7,9 +7,9 @@ function CardDrinks() {
   return (
     <div>
       {drink.slice(0, 12).map((element, index) => (
-        <div key={element.idDrink} data-testid={`${index}-recipe-card`}>
-          <p data-testid={`${index}-card-name`}>{element.strDrink}</p>
-          <Link to={`/bebidas/${element.idDrink}`}>
+        <Link to={`/bebidas/${element.idDrink}`}>
+          <div key={element.idDrink} data-testid={`${index}-recipe-card`}>
+            <p data-testid={`${index}-card-name`}>{element.strDrink}</p>
             <img
               data-testid={`${index}-card-img`}
               src={element.strDrinkThumb}
@@ -17,8 +17,8 @@ function CardDrinks() {
               height="15%"
               alt={element.strDrink}
             />
-          </Link>
-        </div>
+          </div>
+        </Link>
       ))}
     </div>
   );

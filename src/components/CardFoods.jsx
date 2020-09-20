@@ -7,9 +7,9 @@ function CardFoods() {
   return (
     <div>
       {food.slice(0, 12).map((element, index) => (
-        <div key={element.idMeal} data-testid={`${index}-recipe-card`}>
-          <p data-testid={`${index}-card-name`}>{element.strMeal}</p>
-          <Link to={`/comidas/${element.idMeal}`}>
+        <Link to={`/comidas/${element.idMeal}`}>
+          <div key={element.idMeal} data-testid={`${index}-recipe-card`}>
+            <p data-testid={`${index}-card-name`}>{element.strMeal}</p>
             <img
               data-testid={`${index}-card-img`}
               src={element.strMealThumb}
@@ -17,8 +17,8 @@ function CardFoods() {
               height="15%"
               alt={element.strMeal}
             />
-          </Link>
-        </div>
+          </div>
+        </Link>
       ))}
     </div>
   );

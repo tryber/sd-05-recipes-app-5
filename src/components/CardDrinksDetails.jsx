@@ -35,7 +35,7 @@ function CardDrinksDetails() {
     <div>
       <div>
         {drink.map((ele) => (
-          <div>
+          <div key={ele.strDrink}>
             <img alt={ele.strDrink} src={ele.strDrinkThumb} data-testid="recipe-photo" />
             <p data-testid="recipe-title">{ele.strDrink}</p>
             <img alt="share" src={shareIcon} data-testid="share-btn" />
