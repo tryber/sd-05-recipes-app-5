@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import copyToClipboard from 'clipboard-copy';
 import Header from '../components/Header';
 import shareIcon from '../images/shareIcon.svg';
 import blackHeartIcon from '../images/blackHeartIcon.svg';
-import copyToClipboard from 'clipboard-copy';
-
-
 
 const receitasDaVovo = JSON.parse(localStorage.getItem('favoriteRecipes')) || [];
 
@@ -19,11 +17,7 @@ const mapFavoriteRecipes = (favoritas, setFavoritas) =>
   favoritas.map(({ id, type, area, category, alcoholicOrNot, name, image }, index) => (
     <div>
       <Link to={`/${type}s/${id}`}>
-        <img
-          data-testid={`${index}-horizontal-image`}
-          src={image}
-          alt={image}
-        />
+        <img data-testid={`${index}-horizontal-image`} src={image} alt={image} />
       </Link>
       {type === 'comida' && (
         <p data-testid={`${index}-horizontal-top-text`}>
