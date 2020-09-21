@@ -4,6 +4,7 @@ import copyToClipboard from 'clipboard-copy';
 import Header from '../components/Header';
 import shareIcon from '../images/shareIcon.svg';
 import blackHeartIcon from '../images/blackHeartIcon.svg';
+import underC from '../images/underC.png'
 
 const receitasDaVovo = JSON.parse(localStorage.getItem('favoriteRecipes')) || [];
 
@@ -56,22 +57,25 @@ const ReceitasFavoritas = () => {
     <div>
       <Header hideSearch>Receitas Favoritas</Header>
       <div>
-        <button onClick={() => setFavoritas(receitasDaVovo)} data-testid="filter-by-all-btn">
+        <button className="btn btn-dark topButtons2" onClick={() => setFavoritas(receitasDaVovo)} data-testid="filter-by-all-btn">
           All
-        </button>
+        </button><br/>
         <button
           onClick={() => setFavoritas(receitasDaVovo.filter((recipe) => recipe.type === 'comida'))}
           data-testid="filter-by-food-btn"
+          className="btn btn-dark topButtons2"
         >
           Food
-        </button>
+        </button><br/>
         <button
           onClick={() => setFavoritas(receitasDaVovo.filter((recipe) => recipe.type === 'bebida'))}
           data-testid="filter-by-drink-btn"
+          className="btn btn-dark topButtons2"
         >
           Drinks
-        </button>
+        </button><br/>
       </div>
+      <img className='underC' src={underC} />
       {mapFavoriteRecipes(favoritas, setFavoritas)}
     </div>
   );

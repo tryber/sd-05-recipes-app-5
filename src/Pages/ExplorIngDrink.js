@@ -24,6 +24,7 @@ const DrinksIngredients = () => {
           key="ingLogo.strDrink"
           data-testid={`${index}-ingredient-card`}
           onClick={() => hC(ingLogo.strIngredient1)}
+          className="Foood btn-dark"
         >
           <img
             data-testid={`${index}-card-img`}
@@ -43,7 +44,7 @@ const DrinksIngredients = () => {
 
   return (
     <div>
-      <Header hideSearch>Explorar Ingredientes</Header>
+      <Header hideSearch>Explorar Ingredientes</Header><br/>
       {covid(ing)}
       <Footer />
     </div>

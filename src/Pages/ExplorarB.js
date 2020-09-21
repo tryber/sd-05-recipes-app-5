@@ -14,13 +14,22 @@ function ExplorarB() {
   if (drink.length === 1) return <Redirect to={`/bebidas/${drink[0].idDrink}`} />;
   return (
     <div>
-      <Header hideSearch>Explorar Bebidas</Header>
+      <Header hideSearch>Explorar Bebidas</Header><br/>
       <Link to="/explorar/bebidas/ingredientes">
-        <button data-testid="explore-by-ingredient" type="button">
+        <button
+          data-testid="explore-by-ingredient"
+          className="btn btn-dark topButtons2"
+          type="button"
+        >
           Por Ingredientes
         </button>
-      </Link>
-      <button onClick={() => handleClick()} data-testid="explore-surprise" type="button">
+      </Link><br/>
+      <button
+        className="btn btn-dark topButtons2"
+        onClick={() => handleClick()}
+        data-testid="explore-surprise"
+        type="button"
+      >
         Me Surpreenda!
       </button>
       <Footer />

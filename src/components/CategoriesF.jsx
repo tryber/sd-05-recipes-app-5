@@ -23,13 +23,14 @@ function CategoriesF() {
     getFood().then((data) => setFood(data.meals));
   }
   return (
-    <div>
-      <button onClick={() => onCAll()} value="All" data-testid="All-category-filter">
+    <div className="topButtons">
+      <button class="btn btn-dark" onClick={() => onCAll()} value="All" data-testid="All-category-filter">
         All
       </button>
       {categories.slice(0, 5).map((element) => (
         <div>
           <button
+            class="btn btn-dark"
             data-testid={`${element.strCategory}-category-filter`}
             onClick={(e) => onC(e.target.value)}
             value={element.strCategory}

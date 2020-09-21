@@ -20,19 +20,26 @@ export default class Perfil extends Component {
         <div>
           <Header hideSearch>Perfil</Header>
         </div>
-        {aE !== '' ? <p data-testid="profile-email">{aE.email.email}</p> : <p>Sem e-mail</p>}
+        {aE !== '' ? (
+          <p className="usr-email topButtons" data-testid="profile-email">
+            Email do usuário: 
+            <br/>{aE.email.email}
+          </p>
+        ) : (
+          <p>Sem e-mail</p>
+        )}
         <Link to="/receitas-feitas">
-          <button type="button" data-testid="profile-done-btn">
+          <button class="btn btn-dark topButtons" type="button" data-testid="profile-done-btn">
             Receitas Feitas
           </button>
-        </Link>
+        </Link><br/>
         <Link to="/receitas-favoritas">
-          <button type="button" data-testid="profile-favorite-btn">
+          <button class="btn btn-dark topButtons" type="button" data-testid="profile-favorite-btn">
             Receitas Favoritas
           </button>
-        </Link>
+        </Link><br/>
         <Link to="/">
-          <button onClick={() => hC()} type="button" data-testid="profile-logout-btn">
+          <button class="btn btn-dark topButtons" onClick={() => hC()} type="button" data-testid="profile-logout-btn">
             Sair
           </button>
         </Link>

@@ -9,7 +9,7 @@ const Header = ({ children, hideSearch }) => {
   const [display, setDisplay] = useState(false);
   return (
     <Fragment>
-      <div>
+      <div className="header">
         <Link to="/perfil">
           <img data-testid="profile-top-btn" src={profileIcon} alt="profile" />
         </Link>

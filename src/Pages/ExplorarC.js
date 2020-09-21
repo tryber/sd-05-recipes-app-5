@@ -16,16 +16,25 @@ function ExplorarC() {
     <div>
       <Header hideSearch>Explorar Comidas</Header>
       <Link to="/explorar/comidas/ingredientes">
-        <button data-testid="explore-by-ingredient" type="button">
+        <button
+          className="btn btn-dark topButtons2"
+          data-testid="explore-by-ingredient"
+          type="button"
+        >
           Por Ingredientes
-        </button>
+        </button><br/>
       </Link>
       <Link to="/explorar/comidas/area">
-        <button data-testid="explore-by-area" type="button">
+        <button className="btn btn-dark topButtons2" data-testid="explore-by-area" type="button">
           Por Local de Origem
-        </button>
+        </button><br/>
       </Link>
-      <button onClick={() => handleClick()} data-testid="explore-surprise" type="button">
+      <button
+        onClick={() => handleClick()}
+        className="btn btn-dark topButtons2"
+        data-testid="explore-surprise"
+        type="button"
+      >
         Me Surpreenda!
       </button>
       <Footer />

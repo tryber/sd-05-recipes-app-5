@@ -25,9 +25,11 @@ const FoodsIngredients = () => {
         key="ingLogo.strIngredient"
         data-testid={`${index}-ingredient-card`}
         onClick={() => hC(ingLogo.strIngredient)}
+        className="Foood btn-dark"
       >
         <img
           data-testid={`${index}-card-img`}
+          
           src={`https://www.themealdb.com/images/ingredients/${ingLogo.strIngredient}-Small.png`}
           alt="ingrediente logo"
         />
@@ -43,7 +45,7 @@ const FoodsIngredients = () => {
 
   return (
     <div>
-      <Header hideSearch>Explorar Ingredientes</Header>
+      <Header hideSearch>Explorar Ingredientes</Header><br/>
       {antonio(ing)}
       <Footer />
     </div>

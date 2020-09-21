@@ -6,12 +6,12 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 const fulfillFoods = (foods) => (
-  <div>
+  <div className='oi'>
     {foods.slice(0, 12).map((el, i) => (
       <Link to={`/comidas/${el.idMeal}`}>
-        <div data-testid={`${i}-recipe-card`}>
+        <div className='Foood'data-testid={`${i}-recipe-card`}>
           <p data-testid={`${i}-card-name`}>{el.strMeal}</p>
-          <img alt={el.strMeal} data-testid={`${i}-card-img`} src={el.strMealThumb} heigth="15%" width="15%" />
+          <img className='fotoComida'alt={el.strMeal} data-testid={`${i}-card-img`} src={el.strMealThumb} heigth="15%" width="15%" />
         </div>
       </Link>
     ))}
@@ -27,7 +27,7 @@ function ExplorarArea() {
     setA2(area);
   }
   const selectArea = (sAreas) => (
-    <select data-testid="explore-by-area-dropdown" onChange={(e) => hC(e.target.value)}>
+    <select className='form-control btn-dark'data-testid="explore-by-area-dropdown" onChange={(e) => hC(e.target.value)}>
       <option value="all" data-testid="All-option">
         All
       </option>
@@ -48,8 +48,8 @@ function ExplorarArea() {
 
   return (
     <div>
-      <Header>Explorar Origem</Header>
-      {areas ? selectArea(areas) : <div> oiiii </div>}
+      <Header>Explorar Origem</Header><br/>
+      {areas ? selectArea(areas) : <div> oiiii </div>}<br/>
       {food ? fulfillFoods(food) : <div> oi2 </div>}
       <Footer />
     </div>

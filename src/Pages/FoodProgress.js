@@ -44,8 +44,7 @@ function FoodProgress() {
   }, []);
 
   useEffect(() => {
-    setListFood(ingredients(food),
-    setListMeasure(measure(food)));
+    setListFood(ingredients(food), setListMeasure(measure(food)));
   }, [food]);
 
   return (
@@ -54,21 +53,27 @@ function FoodProgress() {
         {food.map((ele) => (
           <div>
             <img alt={ele.strMeal} src={ele.strMealThumb} data-testid="recipe-photo" />
-            <p data-testid="recipe-title">{ele.strMeal}</p>
-            <img alt="share" src={shareIcon} data-testid="share-btn" />
-            <img alt="fav" src={favIcon} data-testid="favorite-btn" />
+            <div className="cDetails">
+              <div>
+                <p data-testid="recipe-title">{ele.strMeal}</p>
+              </div>
+              <div>
+                <img alt="share" src={shareIcon} data-testid="share-btn" />
+                <img alt="fav" src={favIcon} data-testid="favorite-btn" />
+              </div>
+            </div>
             {/* <FavBtn /> */}
             <p data-testid="recipe-category">{ele.strCategory}</p>
             {listMeasure ? (
               <ul>
                 {listMeasure
-                .filter((el) => el !== ' - ' && el !== '')
-                .map((element, i) => (
-                  <li data-testid={`${i}-ingredient-step`}>
-                    <input type="checkbox" data-testid={`${i}-ingredient-name-and-measure`} />
-                    {listFood[i]} - {element}
-                  </li>
-                ))}
+                  .filter((el) => el !== ' - ' && el !== '')
+                  .map((element, i) => (
+                    <li data-testid={`${i}-ingredient-step`}>
+                      <input type="checkbox" data-testid={`${i}-ingredient-name-and-measure`} />
+                      {listFood[i]} - {element}
+                    </li>
+                  ))}
               </ul>
             ) : (
               <div>{console.log('oi')}</div>

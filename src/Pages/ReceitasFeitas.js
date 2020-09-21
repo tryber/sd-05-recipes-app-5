@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import copyToClipboard from 'clipboard-copy';
 import Header from '../components/Header';
 import shareIcon from '../images/shareIcon.svg';
-
+import underC from '../images/underC.png'
 
 const ReceitasDaVovo = (vovo) =>
   vovo.map(
@@ -61,22 +61,25 @@ const ReceitasFeitas = () => {
     <div>
       <Header hideSearch>Receitas Feitas</Header>
       <div>
-        <button onClick={() => setVovo(receita)} data-testid="filter-by-all-btn">
+        <button className="btn btn-dark topButtons2" onClick={() => setVovo(receita)} data-testid="filter-by-all-btn">
           All
-        </button>
+        </button><br/>
         <button
           onClick={() => setVovo(receita.filter((recipe) => recipe.type === 'comida'))}
           data-testid="filter-by-food-btn"
+          className="btn btn-dark topButtons2"
         >
           Food
-        </button>
+        </button><br/>
         <button
           onClick={() => setVovo(receita.filter((recipe) => recipe.type === 'bebida'))}
           data-testid="filter-by-drink-btn"
+          className="btn btn-dark topButtons2"
         >
           Drinks
-        </button>
+        </button><br/>
       </div>
+        <img className='underC' src={underC} />
       {ReceitasDaVovo(vovo)}
     </div>
   );

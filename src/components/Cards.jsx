@@ -40,7 +40,7 @@ function Cards() {
     );
   }
 
-  return <p>Oi</p>;
+  return <p></p>;
 }
 
 export default Cards;

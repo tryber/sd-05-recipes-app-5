@@ -38,10 +38,19 @@ function CardDrinksDetails() {
         {drink.map((ele) => (
           <div>
             <img alt={ele.strDrink} src={ele.strDrinkThumb} data-testid="recipe-photo" />
-            <p data-testid="recipe-title">{ele.strDrink}</p>
-            <img alt="share" src={shareIcon} data-testid="share-btn" />
-            <img alt="fav" src={favIcon} data-testid="favorite-btn" />
-            <p data-testid="recipe-category">{ele.strCategory}{ele.strAlcoholic}</p>
+            <div className="cDetails">
+              <div>
+                <p data-testid="recipe-title">{ele.strDrink}</p>
+              </div>
+              <div>
+                <img alt="share" src={shareIcon} data-testid="share-btn" />
+                <img alt="fav" src={favIcon} data-testid="favorite-btn" />
+              </div>
+            </div>
+            <p data-testid="recipe-category">
+              {ele.strCategory}
+              {ele.strAlcoholic}
+            </p>
             {aux1 ? (
               <ul>
                 {aux1
