@@ -15,7 +15,7 @@ export const getDrinksByName = (name) => {
 export const getDrinksByIngredients = (ingredient) => {
   const URL = `${drinkUrl}filter.php?i=${ingredient}`;
   return fetch(URL).then((response) =>
-    response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json))),
+    response.json().then((data) => (response.ok ? Promise.resolve(data) : Promise.reject(data))),
   );
 };
 
@@ -32,7 +32,12 @@ export const getDrinksCategories = () => {
     response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json))),
   );
 };
-
+export const getDCatFiltered = (cat) => {
+  const URL = `${drinkUrl}filter.php?c=${cat}`;
+  return fetch(URL).then((response) =>
+    response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json))),
+  );
+};
 export const getDrinksIngredients = () => {
   const URL = `${drinkUrl}list.php?i=list`;
   return fetch(URL).then((response) =>
@@ -42,6 +47,13 @@ export const getDrinksIngredients = () => {
 
 export const getRandomDrinks = () => {
   const URL = `${drinkUrl}random.php`;
+  return fetch(URL).then((response) =>
+    response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json))),
+  );
+};
+
+export const getDrinksById = (id) => {
+  const URL = `${drinkUrl}lookup.php?i=${id}`;
   return fetch(URL).then((response) =>
     response.json().then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json))),
   );

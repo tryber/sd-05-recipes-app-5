@@ -1,3 +1,102 @@
+  body{
+    background:#242424;
+    color: #585b60;
+    max-width: 360px;
+  }
+* {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  max-width: 360px;
+}
+
+.recipes-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.oi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.oi2{
+  text-align: center;
+}
+.fotoComida {
+  border-radius: 6px;
+  height: 109px;
+  width: 161px;
+}
+.usr-email {
+  color: silver;
+  text-align: center;
+}
+.Foood {
+  height: 170px;
+  width: 160px;
+  margin: 4px 0;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.header {
+  align-items: center;
+  background: #ff6b35;
+  color:black;
+  display: flex;
+  justify-content: space-around;
+  width: 360px;
+  font-family: 'Ranchers', cursive;
+
+}
+
+.topButtons {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px 9px;
+  width: 100%;
+}
+.topButtons2 {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 9px;
+  width: 100%;
+}
+.underC {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.cDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size:1.5em;
+}
+footer {
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  width: 360px;
+  height: 60px;
+  background: #ff6b35;
+};
+
 #meals {
   height: 100vh;
   width: 100%;
@@ -9,7 +108,9 @@
   font-family: sans-serif;
   color: #464646;
 }
-
+a {
+color: silver;
+}
 #rocksGlass {
   max-height: 80vh;
   animation: shake 1s infinite ease;

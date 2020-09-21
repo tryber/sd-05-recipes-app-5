@@ -1,0 +1,19 @@
+.login {
+  align-items: center;
+  background-color: orange;
+  background-image: url('../images/dibrecooking.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+.MonsterChef {
+  color: #a4161a;
+  font-size: 8vh;
+  font-style: italic;
+  padding-bottom: 2%;
+  text-shadow: 2px 2px 5px orange;
+}
